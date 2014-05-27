@@ -4,7 +4,7 @@ MAINTAINER bin liu liubin0329@gmail.com
 
 ADD jpeg.patch /tmp/jpeg.patch
 
-RUN apt-get update && apt-get install wget make g++ patch zlib1g-dev libgif-dev
+RUN apt-get update && apt-get install -y wget make g++ patch zlib1g-dev libgif-dev
 
 RUN cd /tmp && \
 wget http://www.swftools.org/swftools-2013-04-09-1007.tar.gz && \
