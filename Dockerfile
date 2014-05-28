@@ -16,15 +16,15 @@ tar zxf jpegsrc.v9a.tar.gz && \
 tar zxf swftools-2013-04-09-1007.tar.gz
 
 RUN cd /tmp/jpeg-9a && \
-./configure && make && make install && \
-ranlib /usr/local/lib/libjpeg.a && ldconfig /usr/local/lib
+./configure && make && make install
 
 RUN cd /tmp/freetype-2.4.0 && \
 ./configure && make && make install
 
 RUN cd /tmp && patch -p0 < /tmp/jpeg.patch && \
 cd swftools-2013-04-09-1007 && \
-./configure && make && make install
+./configure && make && make install &&
+ranlib /usr/local/lib/libjpeg.a && ldconfig /usr/local/lib
 
 RUN cd /tmp && rm -rf swftools* && \
 rm -rf jpeg* && rm -rf freetype*
