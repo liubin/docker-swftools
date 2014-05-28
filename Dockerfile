@@ -26,4 +26,5 @@ RUN cd /tmp && patch -p0 < /tmp/jpeg.patch && \
 cd swftools-2013-04-09-1007 && \
 ./configure && make && make install
 
-
+RUN cd /tmp && rm -rf swftools* && \
+rm -rf jpeg* && rm -rf freetype*
