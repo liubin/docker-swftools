@@ -23,7 +23,7 @@ RUN cd /tmp/freetype-2.4.0 && \
 
 RUN cd /tmp && patch -p0 < /tmp/jpeg.patch && \
 cd swftools-2013-04-09-1007 && \
-./configure && make && make install &&
+./configure && make && make install && \
 ranlib /usr/local/lib/libjpeg.a && ldconfig /usr/local/lib
 
 RUN cd /tmp && rm -rf swftools* && \
